@@ -2,7 +2,9 @@
 
 //
 // custom-variables
-//
+$gray-3: #f5f5f5;
+$gray-1: #878787;
+$status-correct: #14B441;
 
 // Vertical Sidebar - Default Light
 $sidebar-bg: #ffffff;
@@ -17,12 +19,12 @@ $sidebar-width-sm:  160px;
 $layout-collapsed-min-height: 1760px;
 
 // Vertical Sidebar - Dark
-$sidebar-dark-bg: #2a3042; //2c313a
-$sidebar-dark-menu-item-color: #a6b0cf;
-$sidebar-dark-menu-sub-item-color: #79829c;
-$sidebar-dark-menu-item-icon-color: #6a7187;
-$sidebar-dark-menu-item-hover-color: #ffffff;
-$sidebar-dark-menu-item-active-color: #ffffff;
+$sidebar-dark-bg: $teal; //2c313a
+$sidebar-dark-menu-item-color: $gray-1;
+$sidebar-dark-menu-sub-item-color: $gray-1;
+$sidebar-dark-menu-item-icon-color: $gray-1;
+$sidebar-dark-menu-item-hover-color: $white;
+$sidebar-dark-menu-item-active-color: $white;
 
 // Topbar - Deafult Light
 $header-height: 70px;
@@ -61,6 +63,7 @@ $boxed-layout-width:    1300px;
 $boxed-body-bg:       #ebebf4;
 
 // Font Weight
+$fw-default: 400;
 $fw-medium: 500;
 $font-weight-semibold: 600;
 
@@ -79,7 +82,7 @@ $table-dark-border-color:     tint-color($gray-800, 7.5%);
 
 // Color system
 
-$white:    #fff;
+$white:    #fcfcfc;
 $gray-100: #f8f9fa;
 $gray-200: #eff2f7;
 $gray-300: #f6f6f6;
@@ -114,7 +117,7 @@ $red:     #f46a6a;
 $orange:  #f1734f;
 $yellow:  #f1b44c;
 $green:   #34c38f;
-$teal:    #050505;
+$teal:    #1e1e1e;
 $cyan:    #50a5f1;
 
 // scss-docs-start colors-map
@@ -126,7 +129,7 @@ $colors: (
     "red":        $red,
     "orange":     $orange,
     "yellow":     $yellow,
-    "green":      $green,
+    "green":      $status-correct,
     "teal":       $teal,
     "cyan":       $cyan,
     "white":      $white,
@@ -135,9 +138,9 @@ $colors: (
 );
 // scss-docs-end colors-map
 
-$primary:       $blue;
+$primary:       $teal;
 $secondary:     $gray-600;
-$success:       $green;
+$success:       $status-correct;
 $info:          $cyan;
 $warning:       $yellow;
 $danger:        $red;
@@ -547,13 +550,13 @@ $lead-font-weight:            300;
 $small-font-size:             80%;
 
 $sub-sup-font-size:           .75em;
-$text-muted:                  $gray-600;
+$text-muted:                  $gray-1;
 
 $initialism-font-size:        $small-font-size;
 
 $blockquote-margin-y:         $spacer;
 $blockquote-font-size:        $font-size-base * 1.25;
-$blockquote-footer-color:     $gray-600;
+$blockquote-footer-color:     $gray-1;
 $blockquote-footer-font-size: $small-font-size;
 
 $hr-margin-y:                 $spacer;

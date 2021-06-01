@@ -52,12 +52,21 @@
 
 // Font weight help class
 
+.fw-default {
+  font-weight: $fw-default;
+}
+
 .fw-medium {
   font-weight: $fw-medium;
 }
 
 .font-weight-semibold {
   font-weight: $font-weight-semibold;
+}
+
+// Text color
+.text-gray-1 {
+  color: $gray-1;
 }
 
 // Social

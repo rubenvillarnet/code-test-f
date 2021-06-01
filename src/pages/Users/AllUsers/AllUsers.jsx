@@ -11,6 +11,7 @@ import {
   Row,
   Modal,
   Button,
+  Badge,
   ModalHeader,
   ModalBody,
 } from "reactstrap"
@@ -29,7 +30,7 @@ import BootstrapTable from "react-bootstrap-table-next"
 import images from "assets/images"
 //Import Breadcrumb
 import Breadcrumbs from "components/Common/Breadcrumb"
-
+import "./allUsers.scss"
 import {
   getUsers,
   addNewUser,
@@ -110,10 +111,8 @@ const AllUsers = props => {
       sort: true,
       formatter: (cellContent, user) => (
         <>
-          <h5 className="font-size-14 mb-1">
-            <Link to="#" className="text-dark">
-              {user.name}
-            </Link>
+          <h5 className="font-size-14 mb-1 text-muted fw-default">
+            {user.name}
           </h5>
         </>
       ),
@@ -152,9 +151,9 @@ const AllUsers = props => {
       sort: true,
       formatter: (cellContent, user) =>
         user.status ? (
-          <span>{props.t("Active")}</span>
+          <Badge color="success">{props.t("Active")}</Badge>
         ) : (
-          <span>{props.t("Inactive")}</span>
+          <Badge>{props.t("Inactive")}</Badge>
         ),
     },
     {
@@ -170,8 +169,8 @@ const AllUsers = props => {
       editable: false,
       text: props.t("Action"),
       formatter: (cellContent, user) => (
-        <div className="d-flex gap-3">
-          <Link className="text-success" to="#">
+        <div className="d-flex justify-content-center">
+          <Link className="text-gray-1" to="#">
             <i
               className="mdi mdi-eye font-size-18"
               id="edittooltip"
@@ -330,7 +329,7 @@ const AllUsers = props => {
                                     selectRow={selectRow}
                                     defaultSorted={defaultSorted}
                                     classes={
-                                      "table align-middle table-nowrap table-hover"
+                                      "table align-middle table-nowrap table-hover users-table"
                                     }
                                     bordered={false}
                                     striped={false}

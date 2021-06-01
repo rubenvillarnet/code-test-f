@@ -1,0 +1,44 @@
+@import "../../../assets/scss/theme.scss";
+
+
+.users-table {
+    .badge {
+    background-color: $gray-3;
+    color: $gray-1;
+    border-radius: 0;
+    font-size: $font-size-base;
+    font-weight: $fw-default;
+    &[href] {
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+    &.badge-success {
+    background-color: $success;
+    color: $white;
+  }
+  }
+  thead {
+    tr {
+      position: relative;
+      th:nth-child(2) {
+        position: absolute;
+        left: 12px;
+      }
+      th:last-child {
+        text-align: center;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td:nth-child(2) {
+        padding-right: 0;
+      }
+    }
+  }
+  .selection-cell {
+    padding-right: 0;
+  }
+}
