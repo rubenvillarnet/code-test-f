@@ -170,11 +170,10 @@ const AllUsers = props => {
       text: props.t("Action"),
       formatter: (cellContent, user) => (
         <div className="d-flex justify-content-center">
-          <Link className="text-gray-1" to="#">
+          <Link className="text-gray-1" to={`/usuarios/${user.id}`}>
             <i
               className="mdi mdi-eye font-size-18"
               id="edittooltip"
-              onClick={() => handleUserClick(user)}
             ></i>
           </Link>
         </div>
@@ -203,23 +202,6 @@ const AllUsers = props => {
 
   const toggle = () => {
     setModal(!modal)
-  }
-
-  const handleUserClick = arg => {
-    const user = arg
-
-    setUserList({
-      id: user.id,
-      name: user.name,
-      designation: user.designation,
-      email: user.email,
-      tags: user.tags,
-      projects: user.projects,
-    })
-
-    setIsEdit(true)
-
-    toggle()
   }
 
   const handleDeleteUser = user => {

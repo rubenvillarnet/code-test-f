@@ -10,6 +10,7 @@ import Logout from "../pages/Authentication/Logout"
 import Register from "../pages/Authentication/Register"
 import ForgetPwd from "../pages/Authentication/ForgetPassword"
 import AllUsers from "../pages/Users/AllUsers/AllUsers"
+import UserDetail from "../pages/Users/UserDetail/UserDetail"
 
 // Dashboard
 import Dashboard from "../pages/Dashboard/index"
@@ -21,7 +22,8 @@ const userRoutes = [
   { path: "/profile", component: UserProfile },
 
   // users
-  { path: "/todos-miembros", component: AllUsers },
+  { path: "/usuarios", component: AllUsers },
+  { path: "/usuarios/:id", component: UserDetail },
 
   // this route should be at the end of all other routes
   { path: "/", exact: true, component: () => <Redirect to="/dashboard" /> },

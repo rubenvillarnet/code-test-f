@@ -8,14 +8,14 @@ const Breadcrumb = props => {
     <Row>
       <Col xs="12">
         <div className="page-title-box d-sm-flex align-items-center justify-content-between fs-5 text">
-            <ol className="breadcrumb m-0 fw-semibold">
-              <BreadcrumbItem className='parent-link'>
-                <Link to="#">{props.title}</Link>
-              </BreadcrumbItem>
-              <BreadcrumbItem active>
-                <Link to="#">{props.breadcrumbItem}</Link>
-              </BreadcrumbItem>
-            </ol>
+          <ol className="breadcrumb m-0 fw-semibold">
+            <BreadcrumbItem className="parent-link">
+              <Link to={props.parent || "#"}>{props.title}</Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>
+              <Link to="#">{props.breadcrumbItem}</Link>
+            </BreadcrumbItem>
+          </ol>
         </div>
       </Col>
     </Row>
