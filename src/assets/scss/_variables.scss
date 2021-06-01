@@ -477,7 +477,7 @@ $aspect-ratios: (
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      'Poppins', sans-serif;
+$font-family-sans-serif:      'Public Sans', sans-serif;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
 // stylelint-enable value-keyword-case
@@ -487,7 +487,7 @@ $font-family-code:            var(--#{$variable-prefix}font-monospace);
 // $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
 // $font-size-base effects the font size of the body text
 $font-size-root:              null;
-$font-size-base:              0.8125rem;
+$font-size-base:              0.875rem;
 $font-size-sm:                $font-size-base * .875;
 $font-size-lg:                $font-size-base * 1.25;
 
