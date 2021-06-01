@@ -21,6 +21,7 @@ import {
   ModalHeader,
   ModalBody,
   CardTitle,
+  Tooltip,
 } from "reactstrap"
 //i18n
 import { withTranslation } from "react-i18next"
@@ -66,8 +67,11 @@ const user = {
 function UserDetail() {
   const params = useParams()
   const [dropdownOpen, setOpen] = useState(false)
+  const [tooltipOpen, setTooltipOpen] = useState(false)
 
   const toggle = () => setOpen(!dropdownOpen)
+  const toggleTooltip = () => setTooltipOpen(!tooltipOpen)
+
   const tabs = [
     { id: 1, label: "Datos Generales", selected: false },
     { id: 2, label: "Detalles de pago", selected: false },
@@ -162,7 +166,21 @@ function UserDetail() {
                     </Col>
                     <Col lg="6">
                       <FormGroup>
-                        <Label for="rfc">RFC</Label>
+                        <Label for="rfc">
+                          RFC{" "}
+                          <i
+                            className="mdi mdi-help-circle font-size-18"
+                            id="rfctooltip"
+                          ></i>
+                          <Tooltip
+                            placement="right"
+                            isOpen={tooltipOpen}
+                            target="rfctooltip"
+                            toggle={toggleTooltip}
+                          >
+                            Registro Federal de Contribuyentes
+                          </Tooltip>
+                        </Label>
                         <Input name="rfc" type="text" id="rfc" />
                       </FormGroup>
                     </Col>
