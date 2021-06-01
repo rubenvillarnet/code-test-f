@@ -16,7 +16,8 @@ import UserDetail from "../pages/Users/UserDetail/UserDetail"
 import Dashboard from "../pages/Dashboard/index"
 
 const userRoutes = [
-  { path: "/dashboard", component: Dashboard },
+  /* { path: "/dashboard", component: Dashboard }, */
+  { path: "/dashboard", component: () => <Redirect to="/usuarios" /> },
 
   // //profile
   { path: "/profile", component: UserProfile },
