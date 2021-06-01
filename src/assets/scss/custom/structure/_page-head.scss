@@ -8,11 +8,17 @@
     .breadcrumb {
         background-color: transparent;
         padding: 0;
+        font-weight: $font-weight-semibold;
+        .parent-link a{
+          color: $gray-1;
+          display: inline-block;
+          margin-right: 0.3125rem;
+        }
     }
 
     h4 {
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: $font-weight-semibold;
         font-size: 16px !important;
     }
 }

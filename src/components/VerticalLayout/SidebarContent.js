@@ -122,14 +122,14 @@ const SidebarContent = props => {
             <li>
               <Link to="/#" className=" ">
                 <i className="bx bx-briefcase"></i>
-                <span>{props.t("Calendar")}</span>
+                <span>{props.t("Companies")}</span>
               </Link>
             </li>
 
             <li>
               <Link to="/#" className="has-arrow ">
                 <i className="bx bx-building"></i>
-                <span>{props.t("Ecommerce")}</span>
+                <span>{props.t("Spaces")}</span>
               </Link>
               <ul className="sub-menu" aria-expanded="false">
                 <li>
