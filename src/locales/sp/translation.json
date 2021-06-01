@@ -159,5 +159,15 @@
    "Users": "Usuarios",
    "AllMembers": "Todos los miembros",
    "Business": "Business",
-   "Managers": "Managers"
+   "Managers": "Managers",
+   "NewUser": "Nuevo usuario",
+   "NameSurname": "Nombre y apellido",
+   "PhoneEmail": "Teléfono / correo eléctrónico",
+   "Company": "Empresa",
+   "AvailableCredits": "Créditos disponibles",
+   "Active": "Activo",
+   "Inactive": "Inactivo" ,
+   "Status": "Estado",
+   "LastLogin": "Último día de entrada",
+   "Action": "Acción"
 }

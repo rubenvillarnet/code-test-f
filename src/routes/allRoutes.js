@@ -9,6 +9,7 @@ import Login from "../pages/Authentication/Login"
 import Logout from "../pages/Authentication/Logout"
 import Register from "../pages/Authentication/Register"
 import ForgetPwd from "../pages/Authentication/ForgetPassword"
+import AllUsers from "../pages/Users/AllUsers/AllUsers"
 
 // Dashboard
 import Dashboard from "../pages/Dashboard/index"
@@ -18,6 +19,9 @@ const userRoutes = [
 
   // //profile
   { path: "/profile", component: UserProfile },
+
+  // users
+  { path: "/todos-miembros", component: AllUsers },
 
   // this route should be at the end of all other routes
   { path: "/", exact: true, component: () => <Redirect to="/dashboard" /> },
