@@ -1,0 +1,26 @@
+@import '../../assets/scss/theme.scss';
+
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  .login-background {
+    flex: 1;
+    background-image: url('../../assets/images/login-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .login-form {
+    max-width: 30rem;
+    width: 100%;
+    padding: 3rem;
+    .logo {
+      margin-bottom: 10rem;
+      path {
+        fill: $teal;
+      }
+    }
+    p {
+      margin-bottom: 4.5rem;
+    }
+  }
+}
