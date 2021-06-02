@@ -2,7 +2,17 @@
 // Forms.scss
 //
 
-
+.form-group {
+  margin-bottom: 1rem;
+  label {
+    font-size: 12px;
+    font-weight: $fw-medium;
+  }
+  .form-control {
+    border-radius: 0;
+    border: 1px solid $teal;
+  }
+}
 
 
 [type="tel"],

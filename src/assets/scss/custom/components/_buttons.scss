@@ -12,6 +12,22 @@ button,a {
   border-radius: 30px;
 }
 
+.btn-primary{
+  color: $teal;
+  background-color: $gray-2;
+  border-color: $gray-2;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+button.btn-primary-outlined{
+  color: $teal !important;
+  background-color: transparent !important;
+  border-color: $teal !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .btn-dark, .btn-secondary{
   color: $gray-200 !important;
   background-color: $teal;

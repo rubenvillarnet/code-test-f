@@ -35,6 +35,8 @@ import { format, parseISO } from "date-fns"
 import { es } from "date-fns/locale"
 
 import { ReactComponent as IsotipoIco } from "../../../assets/images/icons/icon-isotipo.svg"
+import { ReactComponent as VisaIco } from "../../../assets/images/icons/icon-visa.svg"
+import { ReactComponent as StripeIco } from "../../../assets/images/icons/icon-stripe.svg"
 import "./userDetail.scss"
 
 const user = {
@@ -125,7 +127,7 @@ function UserDetail() {
           parent="/usuarios"
           breadcrumbItem="Detalles"
         />
-        <Tabs defaultIndex={1} >
+        <Tabs defaultIndex={1}>
           <Row>
             <Col xl="2">
               <Card className="left-card">
@@ -174,29 +176,44 @@ function UserDetail() {
               <TabPanel>
                 <Card>
                   <CardBody>
-                    <CardTitle tag="h2">Datos generales</CardTitle>
+                    <CardTitle tag="h2" className="fw-medium font-size-28 mb-4">
+                      Datos generales
+                    </CardTitle>
                   </CardBody>
                 </Card>
               </TabPanel>
               <TabPanel>
-                <div>
+                <div className="action-buttons">
                   <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
-                    <DropdownToggle caret>Activo</DropdownToggle>
+                    <DropdownToggle
+                      caret
+                      className="btn-primary-outlined btn-rounded"
+                    >
+                      Activo <i className="bx bx-chevron-down"></i>
+                    </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem disabled>Activo</DropdownItem>
                       <DropdownItem>Inactivo</DropdownItem>
                     </DropdownMenu>
                   </ButtonDropdown>
-                  <Button>Añadir método de pago</Button>
-                  <Button>Nueva reservación</Button>
-                  <Button>Añadir créditos</Button>
+                  <Button color="primary" className="btn-rounded">
+                    Añadir método de pago
+                  </Button>
+                  <Button color="primary" className="btn-rounded">
+                    Nueva reservación
+                  </Button>
+                  <Button color="primary" className="btn-rounded">
+                    Añadir créditos
+                  </Button>
                 </div>
                 <Card>
                   <CardBody>
-                    <CardTitle tag="h2">Detalles de pago</CardTitle>
-                    <Form>
+                    <CardTitle tag="h2" className="fw-medium font-size-28 mb-4">
+                      Detalles de pago
+                    </CardTitle>
+                    <Form className="payment-form">
                       <Row>
-                        <p>Legal</p>
+                        <p className="font-weight-bold font-size-16">Legal</p>
                       </Row>
                       <Row>
                         <Col lg="6">
@@ -213,7 +230,7 @@ function UserDetail() {
                         </Col>
                         <Col lg="6">
                           <FormGroup>
-                            <Label for="rfc">
+                            <Label for="rfc" className="rfc-label">
                               RFC{" "}
                               <i
                                 className="mdi mdi-help-circle font-size-18"
@@ -233,7 +250,9 @@ function UserDetail() {
                         </Col>
                       </Row>
                       <Row>
-                        <p>Dirección física</p>
+                        <p className="font-weight-bold font-size-16 mt-4">
+                          Dirección física
+                        </p>
                       </Row>
                       <Row>
                         <Col lg="4">
@@ -302,28 +321,54 @@ function UserDetail() {
                 </Card>
                 <Row>
                   <Col lg="6">
-                    <Card>
+                    <Card className='h-100'>
                       <CardBody>
-                        <CardTitle tag="h2">Métodos de pago</CardTitle>
-                        <p>Tarjetas guardadas</p>
-                        <Row>
+                        <div className="d-flex d-flex justify-content-between d-flex align-items-center  mb-4">
+                          <CardTitle
+                            tag="h2"
+                            className="fw-medium font-size-28"
+                          >
+                            Métodos de pago
+                          </CardTitle>
+                          <Button className="btn-dark btn-rounded">
+                            Añadir nuevo
+                          </Button>
+                        </div>
+                        <p className="font-weight-bold font-size-16">
+                          Tarjetas guardadas
+                        </p>
+                        <Row className="mx-0 mb-5">
                           {user.savedCards.map(card => (
-                            <Col lg="4" key={card.id}>
-                              <p>{card.type}</p>
-                              <p>{card.cardHolder}</p>
-                              <p>**** **** **** {card.cardEnds}</p>
+                            <Col lg="4" key={card.id} className="payment-card">
+                              {card.type === "VISA" && <VisaIco />}
+                              <div className="card-data">
+                                <p>{card.cardHolder}</p>
+                                <p>**** **** **** {card.cardEnds}</p>
+                              </div>
                             </Col>
                           ))}
                         </Row>
-                        <p>Powered by stripe</p>
+                        <Row className="mx-0 d-flex justify-content-end">
+                          <StripeIco className="w-auto p-0" />
+                        </Row>
                       </CardBody>
                     </Card>
                   </Col>
                   <Col lg="6">
-                    <Card>
+                    <Card className='h-100'>
                       <CardBody>
-                        <CardTitle tag="h2">Últimas facturas</CardTitle>
-                        <ul>
+                        <div className="d-flex d-flex justify-content-between d-flex align-items-center  mb-4">
+                          <CardTitle
+                            tag="h2"
+                            className="fw-medium font-size-28"
+                          >
+                            Últimas facturas
+                          </CardTitle>
+                          <Button className="btn-dark btn-rounded">
+                            Añadir nueva
+                          </Button>
+                        </div>
+                        <ul className="last-invoices">
                           {user.lastInvoices.map(invoice => (
                             <li key={invoice.id}>
                               <NumberFormat
@@ -331,14 +376,28 @@ function UserDetail() {
                                 displayType={"text"}
                                 thousandSeparator={true}
                                 suffix="€"
-                              />{" "}
-                              {invoice.concept}{" "}
-                              {format(invoice.date, "dd LLLL yyyy, HH:mmaaa", {
-                                locale: es,
-                              })}
+                                className="invoice-qty"
+                              />
+                              <span className="invoice-concept">
+                                {invoice.concept}
+                              </span>
+                              <span className="invoice-date">
+                                {format(
+                                  invoice.date,
+                                  "dd LLLL yyyy, HH:mmaaa",
+                                  {
+                                    locale: es,
+                                  }
+                                )}
+                              </span>
+                              <span className="invoice-actions">
+                                <i className="bx bx-download font-size-18 pe-2"></i>
+                                <i className="mdi mdi-eye font-size-18"></i>
+                              </span>
                             </li>
                           ))}
                         </ul>
+                        <p className='all-invoices'>Ver todas</p>
                       </CardBody>
                     </Card>
                   </Col>
@@ -347,14 +406,18 @@ function UserDetail() {
               <TabPanel>
                 <Card>
                   <CardBody>
-                    <CardTitle tag="h2">Créditos</CardTitle>
+                    <CardTitle tag="h2" className="fw-medium font-size-28 mb-4">
+                      Créditos
+                    </CardTitle>
                   </CardBody>
                 </Card>
               </TabPanel>
               <TabPanel>
                 <Card>
                   <CardBody>
-                    <CardTitle tag="h2">Registro de accesos</CardTitle>
+                    <CardTitle tag="h2" className="fw-medium font-size-28 mb-4">
+                      Registro de accesos
+                    </CardTitle>
                   </CardBody>
                 </Card>
               </TabPanel>
