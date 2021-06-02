@@ -1,0 +1,40 @@
+@import "../../../assets/scss/theme.scss";
+.user-detail {
+
+  .left-card {
+    .user-name {
+      line-height: 100%;
+    }
+    .card-footer {
+      padding: 0;
+      .tabs-buttons {
+        padding-left: 0;
+        margin: 0;
+        li {
+          list-style: none;
+          padding: 1rem 1.5rem;
+          border-top: 1px solid $gray-2;
+          background-color: #ffffff;
+          cursor: pointer;
+          transition: all 0.3s;
+          i {
+            margin-right: 1rem;
+          }
+          svg {
+            margin-right: 1rem;
+          }
+          &:last-child {
+            border-radius: 0  0 0.25rem 0.25rem;
+          }
+          &:hover, &.selected {
+            background-color: $teal;
+            color: #ffffff;
+            svg {
+              fill: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

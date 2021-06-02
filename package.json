@@ -92,6 +92,7 @@
     "react-super-responsive-table": "^5.2.0",
     "react-switch": "^6.0.0",
     "react-table": "^7.6.3",
+    "react-tabs": "^3.2.2",
     "react-toastr": "^3.0.0",
     "react-twitter-auth": "0.0.13",
     "reactstrap": "^8.8.1",
